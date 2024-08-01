@@ -1,0 +1,171 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Calender.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .calender {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .weekday {
+            background-color: cornflowerblue;
+            display: flex;
+            font-size: 32px;
+        }
+
+        .weekday div {
+            width: 170px;
+            text-align: center;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 16px;
+        }
+
+        .grid .card {
+            width: 168px;
+            height: 100px;
+            border: 1px solid palevioletred;
+        }
+
+        .grid .card .card_content {
+            margin: 4px 0;
+            background-color: burlywood;
+            border-radius: 5px;
+        }
+
+        .grid .card .card_content .card_content_close {
+            float: right;
+            padding-right: 10px;
+            cursor: pointer
+        }
+
+
+        .selector {
+            display: flex;
+            justify-content: center;
+            font-size: 30px;
+            text-indent: 50px;
+        }
+
+        .modal {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* 半透明背景色 */
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .modal_dialog {
+            width: 500px;
+            background-color: white;
+            margin: 0 auto;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+        }
+
+        .modal_header {
+            background-color: cornflowerblue;
+            border-radius: 5px 5px 0 0;
+            font-size: 20px;
+            padding: 5px;
+        }
+
+        .modal_body {
+            padding: 5px;
+        }
+
+        .time {
+            margin: 9px 0;
+        }
+
+        .title {
+            margin: 9px 0;
+        }
+
+        .modal_footer {
+            float: right;
+            padding: 5px;
+        }
+
+        .submit {
+            width: 50px;
+        }
+
+        .close {
+            width: 50px;
+        }
+
+        .display_block {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calender">
+        <div class="selector">
+            <button class="pre_btn">上個月</button>
+            <div class="p"></div>
+            <button class="next_btn">下個月</button>
+            <button class="today_btn">今日</button>
+        </div>
+        <div class="weekday">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="grid">
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modal_dialog">
+            <div class="modal_content">
+                <div class="modal_header">
+                    <p class="modal_title">新增時程</p>
+                </div>
+                <div class="modal_body">
+                    <div class="time">
+                        <label for="time">時程：</label>
+                        <input id="time" type="time" required />
+                    </div>
+                    <div class="title">
+                        <labe for="title">標題：</label>
+                            <input id="title" type="text" required />
+                    </div>
+                </div>
+                <hr>
+                <div class="modal_footer">
+                    <button type="button" class="submit">確定</button>
+                    <button type="button" class="close">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
